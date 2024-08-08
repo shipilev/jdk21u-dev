@@ -590,6 +590,8 @@ void OopMapCache::compute_one_oop_map(const methodHandle& method, int bci, Inter
   OopMapCacheEntry* tmp = NEW_C_HEAP_OBJ(OopMapCacheEntry, mtClass);
   tmp->initialize();
   tmp->fill(method, bci);
-  entry->copy_from(tmp);
+  if (tmp->has_valid_mask()) {
+    entry->copy_from(tmp);
+  }
   OopMapCacheEntry::deallocate(tmp);
 }
