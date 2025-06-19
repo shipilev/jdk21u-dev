@@ -22,10 +22,7 @@
  *
  */
 
-#ifndef DONT_USE_PRECOMPILED_HEADER
-#define DONT_USE_PRECOMPILED_HEADER
-#endif
-
+#include "precompiled.hpp"
 #include "memory/allStatic.hpp"
 #include "metaprogramming/enableIf.hpp"
 #include "utilities/debug.hpp"
